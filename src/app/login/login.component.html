@@ -1,0 +1,30 @@
+<h2>LOGIN</h2>
+
+<h4>
+    <span *ngIf="loginService.currentUser else unauthorized">
+        Hello, {{loginService.currentUser.userName}}
+    </span>
+    <ng-template #unauthorized>
+        <span>Not logged in</span>
+    </ng-template>
+</h4>
+
+<div>
+    <label>Name:
+        <input [(ngModel)]="loginModel.name" placeholder="Name"/>
+    </label>
+</div>
+
+<div>
+    <label>Password:
+        <input [(ngModel)]="loginModel.password" placeholder="Password"/>
+    </label>
+</div>
+
+<div>
+    <button (click)="login()">Login</button>
+</div>
+
+<div *ngIf="loginWarning">
+    <p>{{loginWarning}}</p>
+</div>
