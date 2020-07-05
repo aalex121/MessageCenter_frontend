@@ -22,8 +22,10 @@ export class LoginComponent implements OnInit {
   };
 
   loginWarning: string;
+  currentUser: AuthResponse;
  
   ngOnInit() {
+    this.currentUser = this.loginService.currentUser;
   }
 
   login(): void {
@@ -34,6 +36,10 @@ export class LoginComponent implements OnInit {
         res => this.handleLogin(res),
         err => this.handleLoginError(err)
       );
+  }
+
+  logout(): void {
+    this.loginService.handleLogout();
   }
 
   handleLogin(user: AuthResponse): void {
