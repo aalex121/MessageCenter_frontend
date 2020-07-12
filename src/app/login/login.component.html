@@ -1,30 +1,21 @@
-<h2>LOGIN</h2>
-
-<h4>
-    <span *ngIf="currentUser else unauthorized">
-        Hello, {{currentUser.userName}}
-    </span>
-    <ng-template #unauthorized>
-        <span>Not logged in</span>
-    </ng-template>
-</h4>
-
-<div>
-    <label>Name:
-        <input [(ngModel)]="loginModel.name" placeholder="Name"/>
-    </label>
-</div>
-
-<div>
-    <label>Password:
-        <input [(ngModel)]="loginModel.password" placeholder="Password"/>
-    </label>
-</div>
-
-<div>
-    <button type="button" class="btn btn-primary" (click)="login()">Login</button>    
-</div>
-
 <div *ngIf="loginWarning">
-    <p>{{loginWarning}}</p>
+    <ngb-alert [dismissible]="false">{{loginWarning}}</ngb-alert>    
 </div>
+
+<form class="form-signin">
+    <h4>
+        <span *ngIf="currentUser else unauthorized">
+            Hello, {{currentUser.userName}}
+        </span>
+        <ng-template #unauthorized>
+            <span>Not logged in</span>
+        </ng-template>
+    </h4>    
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputName" class="sr-only">Name</label>
+    <input [(ngModel)]="loginModel.name" id="inputName" class="form-control" placeholder="Name" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input [(ngModel)]="loginModel.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>    
+    <button (click)="login()" class="btn btn-lg btn-primary btn-block">Login</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+  </form>

@@ -7,12 +7,15 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserDialogueComponent } from './user-dialogue/user-dialogue.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MessagingComponent } from './messaging/messaging.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UserDialogueComponent
+    UserDialogueComponent,    
+    NavbarComponent, MessagingComponent
   ],
   imports: [
     BrowserModule,
