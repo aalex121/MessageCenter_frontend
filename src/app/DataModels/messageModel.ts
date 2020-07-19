@@ -1,5 +1,6 @@
 export interface MessageModel {
-    authorName: string;
+    collocutorId: number;
+    collocutorName: string;
     id: number;
     senderId: number;
     typeId: number;
