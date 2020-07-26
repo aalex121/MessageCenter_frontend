@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable, from } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoginModel } from './login-model';
-import { MessageRequestModel } from './DataModels/messageRequestModel';
-import { MessageModel } from './DataModels/messageModel';
+import { UserMessageRequestModel } from './DataModels/userMessageRequestModel';
+import { MessageResponseModel } from './DataModels/messageResponseModel';
 import { NewMessageModel } from './DataModels/newMessageModel';
 
 @Injectable({
@@ -15,22 +15,22 @@ export class MessageService {
 
   private messageApiUrl: string = "https://localhost:44321/api/messages";   
 
-  getMessagesToRecipient(requestData: MessageRequestModel): Observable<MessageModel[]> {
+  getMessagesToRecipient(requestData: UserMessageRequestModel): Observable<MessageResponseModel[]> {
     let requestUrl: string = this.messageApiUrl + "/GetByRecipient";
 
-    return this.http.post<MessageModel[]>(requestUrl, requestData);
+    return this.http.post<MessageResponseModel[]>(requestUrl, requestData);
+  }  
+
+  getUserDialogue(requestData: UserMessageRequestModel): Observable<MessageResponseModel[]> {
+    let requestUrl: string = this.messageApiUrl + "/GetUserDialogue";
+
+    return this.http.post<MessageResponseModel[]>(requestUrl, requestData);
   }
 
-  getMessagesFromTo(requestData: MessageRequestModel): Observable<MessageModel[]> {
-    let requestUrl: string = this.messageApiUrl + "/GetFromTo";
+  getGroupMessages(requestData: UserMessageRequestModel): Observable<MessageResponseModel[]> {
+    let requestUrl: string = this.messageApiUrl + "/GetGroupMessages";
 
-    return this.http.post<MessageModel[]>(requestUrl, requestData);
-  }
-
-  getDialogue(requestData: MessageRequestModel): Observable<MessageModel[]> {
-    let requestUrl: string = this.messageApiUrl + "/GetDialogue";
-
-    return this.http.post<MessageModel[]>(requestUrl, requestData);
+    return this.http.post<MessageResponseModel[]>(requestUrl, requestData);
   }
 
   sendMessage(message: NewMessageModel): Observable<number> {

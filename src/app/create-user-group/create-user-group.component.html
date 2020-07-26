@@ -1,0 +1,13 @@
+<form class="form-signin">
+    <h4>
+        Create User Group
+    </h4>    
+    
+    <label for="groupName" class="sr-only">Name</label>
+    <input [(ngModel)]="loginModel.name" id="groupName" class="form-control" placeholder="Name" required autofocus>        
+    <button (click)="login()" class="btn btn-lg btn-primary btn-block">Submit</button>    
+</form>
+
+<h5 *ngIf="newGroupResponse">
+    Success! New Group craeted: {{newGroupResponse.groupName}}
+</h5>
