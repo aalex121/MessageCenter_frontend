@@ -17,7 +17,7 @@ export class CreateUserGroupComponent implements OnInit {
   //TODO Add current user id!
   newGroupRequest: NewGroupModel = {
     groupName: "",
-    creatorId: 2    
+    creatorId: 2
   };
   
   newGroupResponse: GroupResponseModel;

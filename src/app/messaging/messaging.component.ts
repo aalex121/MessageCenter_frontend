@@ -22,7 +22,7 @@ export class MessagingComponent implements OnInit {
 
   //TODO Fill with actual values!
   getMessagesRequest: UserMessageRequestModel = {
-    messageType: 0,
+    messageType: MessageType.Desktop,
     currentUserId: 2,
     collocutorId: 1,
     offset: 0

@@ -32,6 +32,12 @@ export class GroupsService {
     return this.http.get<GroupResponseModel[]>(requestUrl);
   }
 
+  getGroupById(groupId: number): Observable<GroupResponseModel> {
+    let requestUrl = this.groupsApiUrl + "/" + groupId;
+
+    return this.http.get<GroupResponseModel>(requestUrl);
+  }
+
   newGroup(requsetData: NewGroupModel): Observable<GroupResponseModel> {
     return this.http.post<GroupResponseModel>(this.groupsApiUrl, requsetData);
   }

@@ -11,13 +11,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MessagingComponent } from './messaging/messaging.component';
 import { GroupsComponent } from './groups/groups.component';
 import { CreateUserGroupComponent } from './create-user-group/create-user-group.component';
+import { GroupOptsComponent } from './group-opts/group-opts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserDialogueComponent,    
-    NavbarComponent, MessagingComponent, GroupsComponent, CreateUserGroupComponent
+    NavbarComponent, MessagingComponent, GroupsComponent, CreateUserGroupComponent, GroupOptsComponent
   ],
   imports: [
     BrowserModule,

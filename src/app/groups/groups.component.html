@@ -8,16 +8,25 @@
         <div class="row">
             <div class="col-md-6 themed-grid-col">
                 <h6>My Groups</h6>
-
+                <div *ngIf="currentUserGroups" class="row">
+                    <div *ngFor="let group of currentUserGroups" class="col-lg-12">
+                        <a routerLink="/groupOpts/{{group.id}}">{{group.groupName}}</a>
+                    </div>
+                </div>                
             </div>
+
             <div class="col-md-6 themed-grid-col">
                 <h6>All Groups</h6>
-
+                <div *ngIf="availableUserGroups" class="row">
+                    <div *ngFor="let group of availableUserGroups" class="col-lg-12">
+                        <a routerLink="/groupOpts/{{group.id}}">{{group.groupName}}</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="col-md-4 themed-grid-col">
         <h6>Options</h6>
-        <a class="btn btn-success" role="button">New Group</a>
+        <a class="btn btn-success" routerLink="/createGroup" role="button">New Group</a>
     </div>
 </div>
