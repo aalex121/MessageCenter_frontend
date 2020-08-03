@@ -1,6 +1,6 @@
-export interface MessageModel {
-    collocutorId: number;
-    collocutorName: string;
+export interface MessageResponseModel {
+    recipientId: number;
+    senderName: string;
     id: number;
     senderId: number;
     typeId: number;

@@ -1,0 +1,8 @@
+<div *ngIf="currentGroup else notFound">
+    <h4>{{currentGroup.groupName}}</h4>
+</div>
+<ng-template #notFound>
+    <h4>Group not found!</h4>
+</ng-template>
+
+
