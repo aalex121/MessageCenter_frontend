@@ -29,7 +29,7 @@ export class CreateUserGroupComponent implements OnInit {
     this.groupsService.newGroup(this.newGroupRequest).
       subscribe(
         res => this.newGroupResponse = res,
-        err => alert("Fail!")
+        err => alert("Create new Group - Server error!")
       );
   }
 
